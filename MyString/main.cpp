@@ -129,7 +129,10 @@ int main() {
     text6.Print();
     cout << endl << endl;
     
-    
+    MyString textCopy;
+    textCopy=textT1;
+    textCopy.Print();
+    cout<<endl;
     
     
     return 0;

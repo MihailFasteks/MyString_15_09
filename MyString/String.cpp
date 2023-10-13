@@ -284,3 +284,16 @@ MyString& operator++(MyString& obj)
 
     return obj;
 }
+MyString& MyString::operator=(const MyString& right) {
+    if (this != &right) {
+        delete[] str; // 1
+
+        str = new char[right.lenght]; // 2
+        lenght = right.lenght;
+
+        for (int i = 0; i < lenght; ++i)
+            str[i] = right.str[i];
+    }
+
+    return *this; // 3
+}
