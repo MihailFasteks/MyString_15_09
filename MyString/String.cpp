@@ -286,14 +286,30 @@ MyString& operator++(MyString& obj)
 }
 MyString& MyString::operator=(const MyString& right) {
     if (this != &right) {
-        delete[] str; // 1
+        delete[] str; 
 
-        str = new char[right.lenght]; // 2
+        str = new char[right.lenght];
         lenght = right.lenght;
 
         for (int i = 0; i < lenght; ++i)
             str[i] = right.str[i];
     }
 
-    return *this; // 3
+    return *this;
+}
+MyString::MyString(MyString&&)
+{
+    
+}
+MyString& MyString::operator=(MyString&& obj)
+{
+    cout << "Move = \n";
+
+            str = obj.str;
+            obj.str = nullptr;
+
+            lenght = obj.lenght;
+            obj.lenght = 0;
+
+            return *this;
 }

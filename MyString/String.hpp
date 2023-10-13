@@ -36,6 +36,8 @@ public:
     char& operator[](const unsigned int);
         void operator()(const char*);
     MyString& operator=(const MyString& right);
+    MyString(MyString&&);
+    MyString& operator=(MyString&& obj);
 };
 ostream& operator<<(ostream&, const MyString&);
 istream& operator>>(istream&, MyString&);

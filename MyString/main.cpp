@@ -134,6 +134,9 @@ int main() {
     textCopy.Print();
     cout<<endl;
     
-    
+    MyString moveTEXT;
+    moveTEXT=std::move(textCopy);
+    moveTEXT.Print();
+    textCopy.Print();
     return 0;
 }
